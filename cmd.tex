@@ -1,0 +1,37 @@
+
+% a new command which severs arbitrary section number
+\newcommand{\asection}[2]{
+  \setcounter{section}{#1}
+  \addtocounter{section}{-1}
+  \section{#2}
+}
+
+\definecolor{code}{HTML}{dddddd}
+\definecolor{codered}{HTML}{cc0200}
+\definecolor{codepurple}{HTML}{cc33cc}
+\definecolor{codegreen}{HTML}{519179}
+\definecolor{codelavender}{HTML}{e1ecfe}
+
+\newcommand{\acode}[1]{
+  \colorbox{code}{\lstinline[basicstyle=\ttfamily]{#1}}
+}
+\newcommand{\acodered}[1]{
+  \colorbox{codered}{\lstinline[basicstyle=\ttfamily\color{white}]{#1}}
+}
+\newcommand{\acodeppl}[1]{
+  \colorbox{codepurple}{\lstinline[basicstyle=\ttfamily\color{white}]{#1}}
+}
+\newcommand{\acodegrn}[1]{
+  \colorbox{codegreen}{\lstinline[basicstyle=\ttfamily\color{white}]{#1}}
+}
+
+\newenvironment{anote}{
+  \colorlet{shadecolor}{codelavender}
+  \begin{shaded}}
+    {\end{shaded}}
+
+\newenvironment{awarn}{
+  \colorlet{shadecolor}{red!20}
+  \begin{shaded}}
+    {\end{shaded}}
+
